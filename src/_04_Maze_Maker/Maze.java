@@ -10,12 +10,18 @@ public class Maze {
 	public Maze(int w, int h) {
 		this.width = w;
 		this.height = h;
+		
+		Cell[][] cell;
 
-		//2. Initialize the cells using the width and height varibles
-
+		//2. Initialize the cells using the width and height variables
+		 cell= new Cell[w][h];
 		//3. Iterated through each cell and initialize it
 		//   using i and j as the location
-		
+		 for(int i = 0; i < cell.length; i++) {
+				for(int k = 0; k < cell[i].length; k++) {
+					
+				}
+				}
 	}
 
 	//4. This method iterates through the cells and draws them
