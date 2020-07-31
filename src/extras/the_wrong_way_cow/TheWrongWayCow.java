@@ -43,10 +43,87 @@ package extras.the_wrong_way_cow;
 
 public class TheWrongWayCow {
 
-    public static int[] findWrongWayCow(final char[][] field) {
-        // Fill in the code to return the x,y coordinate position of the
-        // head (letter 'c') of the wrong way cow!
-        
-        return null;
-    }
+	public static int[] findWrongWayCow(final char[][] field) {
+
+		int counter = 0;
+		int counter2 = 0;
+		int counter3 = 0;
+		int counter4 = 0;
+
+		int row = 0;
+		int column = 0;
+
+		int row2 = 0;
+		int column2 = 0;
+		
+		int row3 = 0;
+		int column3 = 0;
+		
+		int row4 = 0;
+		int column4 = 0;
+
+		// Fill in the code to return the x,y coordinate position of the
+		// head (letter 'c') of the wrong way cow!
+		for (int i = 0; i < field.length; i++) {
+			for (int k = 0; k < field[i].length; k++) {
+			if(field[i][k]=='c') {
+				System.out.println(i+" "+k);
+			}
+				if (k+2<field[i].length && field[i][k] == 'c') {
+					if (field[i][k + 1] == 'o') {
+						if ( field[i][k + 2] == 'w') {
+							counter = counter + 1;
+							row = i;
+							column = k;
+						}
+					}
+				}
+				if (k-2>=0 && field[i][k] == 'c') {
+					if (field[i][k - 1] == 'o') {
+						if ( field[i][k - 2] == 'w') {
+							counter3 = counter3 + 1;
+							row3 = i;
+							column3 = k;
+						}
+					}
+				}
+				if (i+2<field.length &&field[i][k] == 'c') {
+					if (field[i + 1][k] == 'o') {
+						if (field[i + 2][k] == 'w') {
+							counter2 = counter2 + 1;
+							row2 = i;
+							column2 = k;
+						}
+					}
+				}
+				if (i-2>=0 &&field[i][k] == 'c') {
+					if (field[i - 1][k] == 'o') {
+						if (field[i - 2][k] == 'w') {
+							counter4 = counter4+ 1;
+							row4 = i;
+							column4 = k;
+						}
+					}
+				}
+			}
+		} if(counter==1){
+			int[] coordinates = { column,row};
+		
+			return coordinates;
+		}
+		else if (counter2 == 1) {
+			int[] coordinates2 = { column2,row2};
+		
+			return coordinates2;
+		} else if(counter3==1){
+			int[] coordinates3 = { column3,row3};
+			
+			return coordinates3;
+		}else {
+			int[] coordinates4 = { column4,row4};
+		
+			return coordinates4;
+		}
+
+	}
 }
